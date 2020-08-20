@@ -1,0 +1,25 @@
+﻿@model MvcProductDetAss.Models.Product1
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<table class="table table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td>Product id:</td>
+            <td>@Model.id</td>
+        </tr>
+        <tr>
+            <td>Product Name:</td>
+            <td>@Model.name</td>
+        </tr>
+        <tr>
+            <td>Product rate:</td>
+            <td>@Model.rate</td>
+        </tr>      
+    </tbody>
+</table>
+
+@Html.ActionLink("Back", "Index1", "Products1", null, new { @class = "btn btn-primary" })

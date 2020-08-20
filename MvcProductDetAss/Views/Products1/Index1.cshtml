@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MvcProductDetAss.Models.Product1>
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>All Productss</h2>
+@if (!Model.Any())
+{
+    <text>we Dont have any products yet</text>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Names</th>
+                <th>Rate</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+            <tr>
+                @*<th>Product Name</th>*@
+
+                <td>@Html.DisplayFor(id => s.id)  </td>
+                <td> @Html.ActionLink(s.name, "Details", "Products1", new { id = s.id }, null)</td>
+                <td> @Html.DisplayFor(rate => s.rate)  </td>
+            </tr>
+
+            }
+        </tbody>
+    </table>
+
+    
+
+}
